@@ -30,14 +30,14 @@ for pnt in myResp.payload.pntArray:
 
 
 p2=DaikinApi()/DaikinHeader()/DaikinReqSetLogin(username="admin", password="loisuites")
-myResp=DaikinHeader(sendP(p2))
+myResp=DaikinHeader(sendP('192.168.9.93',p2))
 myResp.show()
 userId=myResp.arg2
 
 
 #id to identify zone wanted
 p4=DaikinApi()/DaikinHeader(id=0)/DaikinReqGetZonePnt()
-myResp=DaikinHeader(sendP(p4))
+myResp=DaikinHeader(sendP('192.168.9.93',p4))
 myResp.show()
 
 
@@ -48,7 +48,7 @@ p5=DaikinApi()/DaikinHeader(id=userId)/DaikinReqGetPntState(reqIds=[
         DaikinStructReqPntState(type=0,id=14)
     ])
 p5.show()
-myResp=DaikinHeader(sendP(p5))
+myResp=DaikinHeader(sendP('192.168.9.93',p5))
 myResp.show()
 
 for pnt in myResp.payload.pntStateArray:
@@ -67,6 +67,10 @@ p6.show()
 myResp=DaikinHeader(sendP(p6))
 myResp.show()
 
+
+p7=DaikinApi()/DaikinHeader(id=userId)/DaikinReqSetLogout()
+myResp=DaikinHeader(sendP('192.168.9.93',p7))
+myResp.show()
 
 
 

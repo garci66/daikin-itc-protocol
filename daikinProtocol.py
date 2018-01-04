@@ -130,6 +130,11 @@ class DaikinRespSetLogin(Packet):
         FieldListField("zoneArray", None, LEIntField("zoneId",0), count_from=lambda pkt: pkt.underlayer.arg3),
     ]
 
+class DaikinReqSetLogout(Packet):
+    name = "Daikin Send Logout info (60004) - set ID to user ID"
+
+class DaikinRespSetLogout(Packet):
+    name = "Daikin Get Logout response (60005)"
 
 class DaikinStructZoneProp(Packet):
     name = "Daikin struct for zone properties response (used in 60101)"
@@ -323,6 +328,8 @@ def sendP(host,packet):
 
 bind_layers(DaikinHeader, DaikinReqSetLogin, command=60002)
 bind_layers(DaikinHeader, DaikinRespSetLogin, command=60003)
+bind_layers(DaikinHeader, DaikinReqSetLogout, command=60004)
+bind_layers(DaikinHeader, DaikinRespSetLogout, command=60005)
 bind_layers(DaikinHeader, DaikinReqGetZoneProp, command=60100)
 bind_layers(DaikinHeader, DaikinRespGetZoneProp, command=60101)
 bind_layers(DaikinHeader, DaikinReqGetPntProp, command=60102)

@@ -1,0 +1,42 @@
+Mode - {#DAIKIN_LONG_NAME}({#DAIKIN_SHORT_NAME})	            daikin.pnt[enumDriveMode,{#DAIKIN_ID}]
+Room Temperature - {#DAIKIN_LONG_NAME}({#DAIKIN_SHORT_NAME})	daikin.pnt[tempAmbient,{#DAIKIN_ID}]
+Set Temperature - {#DAIKIN_LONG_NAME}({#DAIKIN_SHORT_NAME})	    daikin.pnt[tempSetPoint,{#DAIKIN_ID}]
+Venitlation Mode - {#DAIKIN_LONG_NAME}({#DAIKIN_SHORT_NAME})	daikin.pnt[enumVentMode,{#DAIKIN_ID}]
+Venitlation Speed - {#DAIKIN_LONG_NAME}({#DAIKIN_SHORT_NAME})	daikin.pnt[enumVentVol,{#DAIKIN_ID}]
+
+
+
+      |###[ Daikin struct for pnt stateresponse (used in 60105) ]###
+      |  id        = 12
+      |  type      = 0
+      |  unk1      = 1
+      |  enumComStat= 1
+      |  boolError = 0
+      |  errorString= ''
+      |  unitNumber= 0
+      |  pntState  = 1
+      |  complexStatus= 1
+      |  unk2      = 0
+      |  enumDriveMode= 4
+      |  enumVentMode= 4096
+      |  boolFlags1= 7
+      |  boolFlags2= 7
+      |  tempSetPoint= 22.0
+      |  tempAmbient= 22.125
+      |  unk3      = 1
+      |  unk4      = 1
+      |  enumVentVol= 4096
+      |  unk5      = 81
+      |  unk6      = 0
+      |  unk7      = 0
+      |  temp1Int  = 32
+      |  temp1Dec  = 0
+      |  temp2Int  = 16
+      |  temp2Dec  = 0
+      |  temp3Int  = 32
+      |  temp3Dec  = 0
+      |  temp4Int  = 16
+      |  temp4Dec  = 0
+      |  boolUnk   = 0
+      |  unk8      = 1
+      
