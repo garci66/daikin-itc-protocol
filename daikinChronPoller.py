@@ -36,7 +36,6 @@ def main(argv=None):
             if int(respLogin.arg1)!=1:
                 print "Login Failure",myHostIp
                 continue
-
             myUserId=respLogin.arg2
 
             pPntReq=DaikinApi()/DaikinHeader(id=myUserId)/DaikinReqGetPntState(reqIds=reqArray)
@@ -61,5 +60,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
-
 

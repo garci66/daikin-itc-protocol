@@ -15,7 +15,6 @@ def main(argv=None):
     myId=argv[3]
     myUser=argv[4]
     myPass=argv[5]
-
     myHostDict={}
 
     thisTime=int(time.time())
@@ -34,7 +33,7 @@ def main(argv=None):
         myHostDict[myHost]['timestamp']=thisTime
         myHostDict[myHost]['user']=myUser
         myHostDict[myHost]['password']=myPass
-	myHostDict[myHost]['hostId']=myHostId
+        myHostDict[myHost]['hostId']=myHostId
     if myId not in myHostDict[myHost]['units']:
         myHostDict[myHost]['units'][myId]=thisTime
     else:
@@ -52,8 +51,9 @@ def main(argv=None):
 
     with open(fileHostCheck, 'wb') as fp:
         json.dump(myHostDict, fp, indent=4, sort_keys=True)
+    
     print 1
+
 if __name__ == "__main__":
     sys.exit(main())
-
 
