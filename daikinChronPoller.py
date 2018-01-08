@@ -34,7 +34,7 @@ def main(argv=None):
             pLogin=DaikinApi()/DaikinHeader()/DaikinReqSetLogin(username=myUser, password=myPass)
             respLogin=DaikinHeader(sendP(myHostIp,pLogin))
             if int(respLogin.arg1)!=1:
-                #print "Login Failure",myHostIp
+                print "Login Failure",myHostIp
                 continue
             myUserId=respLogin.arg2
 
@@ -59,7 +59,8 @@ def main(argv=None):
                 zabbixPacket.extend(tempPacket)
 
     zbx=ZabbixSender('192.168.128.7')
-    resp=zbx.send(zabbixPacket)
+    zbxResp=zbx.send(zabbixPacket)
+    print zbxResp
 
 if __name__ == "__main__":
     sys.exit(main())

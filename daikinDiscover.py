@@ -26,7 +26,7 @@ def main(argv=None):
         for field in pnt.fields:
             tempDict[zabbixfyFields(field)] = pnt.fields[field]
         myReturn.append(tempDict)
-    print json.dumps(myReturn, indent=4)
+    print json.dumps({'data':myReturn}, indent=4)
 
 if __name__ == "__main__":
     sys.exit(main())

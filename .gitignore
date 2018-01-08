@@ -108,3 +108,7 @@ settings.json
 
 # ignore scapy as local requirement
 scapy/
+
+#ignore local data
+myhosts.json
+activehosts/

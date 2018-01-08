@@ -15,8 +15,6 @@ def main(argv=None):
     myId=argv[3]
     myUser=argv[4]
     myPass=argv[5]
-
-
     myHostDict={}
 
     thisTime=int(time.time())
