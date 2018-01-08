@@ -50,7 +50,11 @@ def main(argv=None):
                     ZabbixMetric(myHostId,'daikin.pnt[tempAmbient,{0}]'.format(pnt.id),pnt.tempAmbient),
                     ZabbixMetric(myHostId,'daikin.pnt[tempSetPoint,{0}]'.format(pnt.id),pnt.tempSetPoint),
                     ZabbixMetric(myHostId,'daikin.pnt[enumVentMode,{0}]'.format(pnt.id),pnt.enumVentMode),
-                    ZabbixMetric(myHostId,'daikin.pnt[enumVentVol,{0}]'.format(pnt.id),pnt.enumVentVol)
+                    ZabbixMetric(myHostId,'daikin.pnt[enumVentVol,{0}]'.format(pnt.id),pnt.enumVentVol),
+                    ZabbixMetric(myHostId,'daikin.pnt[pntState,{0}]'.format(pnt.id),pnt.pntState),
+                    ZabbixMetric(myHostId,'daikin.pnt[errorString,{0}]'.format(pnt.id),pnt.errorString),
+                    ZabbixMetric(myHostId,'daikin.pnt[iconMode,{0}]'.format(pnt.id),pnt.iconMode),
+                    ZabbixMetric(myHostId,'daikin.pnt[iconAppend,{0}]'.format(pnt.id),pnt.iconAppend),
                 ]
                 zabbixPacket.extend(tempPacket)
 

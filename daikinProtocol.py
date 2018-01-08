@@ -237,37 +237,69 @@ class LEIEEEFloatField(Field):
 class DaikinStructPntState(Packet):
     name = "Daikin struct for pnt stateresponse (used in 60105)"
     fields_desc = [
+        # Offset 0
         LEIntField("id",0),
+        # Offset 4
         ByteField("type",0),
+        # Offset 5
         ByteField("unk1",1),
+        # Offset 6
         ByteField("enumComStat",0),
+        # Offset 7
         ByteField("boolError",0),
+        # Offset 8
         StrFixedLenField("errorString","",2),
+        # Offset 10
         ByteField("unitNumber",0),
+        # Offset 11
         ByteField("pntState",0),
-        ByteField("complexStatus",0),
-        ByteField("unk2",0),
+        # Offset 12
+        ByteField("iconMode",0),
+        # Offset 13
+        ByteField("iconAppend",0),
+        # Offset 14
         LEShortEnumField("enumDriveMode",0,{'1':'Fan','2':'Heat','4':'Cool','16':'Submit','32':'Vent','64':'Dry','512':'Autocool'}),
+        # Offset 16
         LEShortEnumField("enumVentMode",0,{'1':'Auto','2':'Ventilation','4':'Normal'}),
+        # Offset 18
         ByteField("boolFlags1",0),
+        # Offset 19
         ByteField("boolFlags2",0),
+        # Offset 20
         LEIEEEFloatField("tempSetPoint",0),
+        # Offset 24
         LEIEEEFloatField("tempAmbient",0),
-        ByteField("unk3",0),
+        # Offset 28
+        ByteField("windDirect",0),
+        # Offset 29
         ByteField("unk4",0),
+        # Offset 30
         LEShortEnumField("enumVentVol",0,{'1':'Auto','2':'Low','4':'High','8':'Auto (Fresh)','16':'Low (Fresh)','32':'High (Fresh)'}),
+        # Offset 32
         LEShortField("unk5",0),
+        # Offset 34
         LEShortField("unk6",0),
+        # Offset 36
         LEShortField("unk7",0),
+        # Offset 38
         ByteField("temp1Int",0),
+        # Offset 39
         ByteField("temp1Dec",0),
+        # Offset 40
         ByteField("temp2Int",0),
+        # Offset 42
         ByteField("temp2Dec",0),
+        # Offset 43
         ByteField("temp3Int",0),
+        # Offset 44
         ByteField("temp3Dec",0),
+        # Offset 45
         ByteField("temp4Int",0),
+        # Offset 46
         ByteField("temp4Dec",0),
+        # Offset 47
         ByteField("boolUnk",0),
+        # Offset 48
         ByteField("unk8",0),
     ]
     def extract_padding(self, s):
