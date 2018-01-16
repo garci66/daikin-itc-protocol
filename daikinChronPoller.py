@@ -55,7 +55,7 @@ def main(argv=None):
                     ZabbixMetric(myHostId,'daikin.pnt[errorString,{0}]'.format(pnt.id),pnt.errorString),
                     ZabbixMetric(myHostId,'daikin.pnt[iconMode,{0}]'.format(pnt.id),pnt.iconMode),
                     ZabbixMetric(myHostId,'daikin.pnt[iconAppend,{0}]'.format(pnt.id),pnt.iconAppend),
-                    ZabbixMetric(myHostId,'daikin.pnt[filterLed,{0}]'.format(pnt.id),pnt.iconAppend & 0x08)
+                    ZabbixMetric(myHostId,'daikin.pnt[filterLed,{0}]'.format(pnt.id), 1 if (pnt.iconAppend & 0x08) else 0 )
                 ]
                 zabbixPacket.extend(tempPacket)
 
