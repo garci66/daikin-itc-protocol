@@ -257,6 +257,7 @@ class DaikinStructPntState(Packet):
         ByteField("iconMode",0),
         # Offset 13
         ByteField("iconAppend",0),
+	# Bit 1:S - Bit 2:P - Bit 3: A - Bit 4: Filter
         # Offset 14
         LEShortEnumField("enumDriveMode",0,{'1':'Fan','2':'Heat','4':'Cool','16':'Submit','32':'Vent','64':'Dry','512':'Autocool'}),
         # Offset 16
